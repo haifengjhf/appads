@@ -1,0 +1,12 @@
+{
+  "name": "MyReactNativeApp",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "react": "16.8.6",
+    "react-native": "0.60.0"
+  },
+  "scripts": {
+    "start": "yarn react-native start"
+  }
+}
