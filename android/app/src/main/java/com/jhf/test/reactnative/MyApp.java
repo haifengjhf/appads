@@ -2,15 +2,9 @@ package com.jhf.test.reactnative;
 
 
 import com.facebook.react.PackageList;
-import com.facebook.react.ReactApplication;
-import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
-import com.facebook.react.shell.MainReactPackage;
-import com.facebook.soloader.SoLoader;
+import com.jhf.reactnative.Init;
 
-import android.app.Application;
-
-import java.util.Arrays;
 import java.util.List;
 
 import androidx.multidex.MultiDexApplication;
@@ -27,6 +21,10 @@ public class MyApp extends MultiDexApplication {
 //        SoLoader.init(this, false);
 //        mReactNativeHost = new MyReactNativeHost(this);
 //        mReactNativeHost.getReactInstanceManager();
+
+
+        List<ReactPackage> packages = new PackageList(this).getPackages();
+        Init.init(packages);
     }
 
 //    public static class MyReactNativeHost extends ReactNativeHost{

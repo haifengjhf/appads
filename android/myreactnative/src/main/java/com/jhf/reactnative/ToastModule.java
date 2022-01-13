@@ -1,4 +1,4 @@
-package com.jhf.test.reactnative;
+package com.jhf.reactnative;
 
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Callback;

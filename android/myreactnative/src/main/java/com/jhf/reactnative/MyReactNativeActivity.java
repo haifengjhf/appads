@@ -36,7 +36,7 @@ public class MyReactNativeActivity extends AppCompatActivity implements DefaultH
                 .setCurrentActivity(this)
                 .setBundleAssetName("index.android.bundle")
                 .setJSMainModulePath("index")
-//                .addPackages(packages)
+                .addPackages(Init.getPackageList())
                 .setUseDeveloperSupport(true)
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .build();

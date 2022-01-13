@@ -29,6 +29,7 @@ allprojects {
 
         flatDir{
             dir 'libs'
+            dir '../myreactnative/libs'
         }
     }
 }
