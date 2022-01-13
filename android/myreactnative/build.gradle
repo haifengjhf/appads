@@ -1,7 +1,9 @@
 plugins {
     id 'com.android.library'
 }
-apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle");
+
+//apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle");
+//applyNativeModulesAppBuildGradle(project)
 
 android {
     compileSdkVersion 30
@@ -15,6 +17,10 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
     }
 
     buildTypes {
@@ -46,6 +52,7 @@ dependencies {
 
 
     //react-native
+    implementation (name:"react-native-0.60.0",ext:"aar")
     implementation 'com.facebook.infer.annotation:infer-annotation:0.11.2'
     implementation 'javax.inject:javax.inject:1'
     implementation 'com.facebook.fresco:fresco:2.0.0'
@@ -66,5 +73,9 @@ dependencies {
     debugImplementation("com.facebook.flipper:flipper-fresco-plugin:0.99.0") {
         exclude group:'com.facebook.flipper'
     }
-    api (name:"react-native-0.60.0",ext:"aar")
+
+    //android-jsc
+//    implementation (name:"android-jsc-cppruntime-r245459",ext:"aar")
+//    implementation (name:"android-jsc-intl-r245459",ext:"aar")
+//    implementation (name:"android-jsc-r245459",ext:"aar")
 }
