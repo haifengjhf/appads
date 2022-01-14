@@ -39,6 +39,12 @@ android {
             dir '../myreactnative/libs'
         }
     }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs 'src/main/jniLibs'
+        }
+    }
 }
 
 dependencies {
@@ -52,6 +58,7 @@ dependencies {
 
 
     //react-native
+    def useIntlJsc = false
     implementation (name:"react-native-0.60.0",ext:"aar")
     implementation 'com.facebook.infer.annotation:infer-annotation:0.11.2'
     implementation 'javax.inject:javax.inject:1'
@@ -63,16 +70,17 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp-urlconnection:3.12.1'
     implementation 'com.squareup.okio:okio:1.15.0'
     implementation "org.webkit:android-jsc:+"
-    debugImplementation("com.facebook.flipper:flipper:0.99.0") {
-        exclude group:'com.facebook.fbjni'
-    }
-    debugImplementation("com.facebook.flipper:flipper-network-plugin:0.99.0") {
-        exclude group:'com.facebook.flipper'
-        exclude group:'com.squareup.okhttp3', module:'okhttp'
-    }
-    debugImplementation("com.facebook.flipper:flipper-fresco-plugin:0.99.0") {
-        exclude group:'com.facebook.flipper'
-    }
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+//    debugImplementation("com.facebook.flipper:flipper:0.99.0") {
+//        exclude group:'com.facebook.fbjni'
+//    }
+//    debugImplementation("com.facebook.flipper:flipper-network-plugin:0.99.0") {
+//        exclude group:'com.facebook.flipper'
+//        exclude group:'com.squareup.okhttp3', module:'okhttp'
+//    }
+//    debugImplementation("com.facebook.flipper:flipper-fresco-plugin:0.99.0") {
+//        exclude group:'com.facebook.flipper'
+//    }
 
     //android-jsc
 //    implementation (name:"android-jsc-cppruntime-r245459",ext:"aar")
